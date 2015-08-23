@@ -56,11 +56,9 @@
         sharedInstance.logFile = [NSFileHandle fileHandleForWritingAtPath:filePath];
         [sharedInstance.logFile seekToEndOfFile];
 
-        #if DEBUG
         UILongPressGestureRecognizer* longRecon = [[UILongPressGestureRecognizer alloc] initWithTarget:sharedInstance action:@selector(show)];
         longRecon.numberOfTouchesRequired = 3;
         [sharedInstance.getWindow addGestureRecognizer:longRecon];
-        #endif
     });
     return sharedInstance;
 }
